@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveSassCompile.settings.formats": [
+			{
+				"extensionName": ".min.css",
+				"format": "compressed",
+				"savePath": "/src/styles/css"
+			}
+		],
+		"liveSassCompile.settings.excludeList": [
+			".vscode/**"
+		],
+		"liveSassCompile.settings.generateMap": false,
+		"liveSassCompile.settings.autoprefix": [
+			"> 1%",
+			"last 2 versions"
+		],
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#FEC001",
+			"titleBar.inactiveBackground": "#FFDD76",
+			"titleBar.activeForeground": "#000",
+			"titleBar.inactiveForeground": "#000"
+		}
+	}
+}
