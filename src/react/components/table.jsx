@@ -65,12 +65,8 @@ const Table = ({ rows }) => {
 
 }
 
-const img_types = [".png", ]
-
 const Row = ({ content = [], head = false }) => {
 
-
-  
   return (
   
     <div className = {`row ${ head ? "row-head" : "" }`}>
