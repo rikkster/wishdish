@@ -1,0 +1,72 @@
+.grid-container {
+
+	position: relative;
+  display: grid;
+	grid-template-columns: repeat(4, 15vw); /*20vw - ширина одной карточки*/
+	justify-content: space-between;
+	grid-row-gap: 55px;
+	grid-column-gap: 5px;
+  padding-top: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 55px;
+
+  .grid__item {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 2.1859px 14.2083px #00000014;
+    transition: 0.3s;
+
+    &:hover { 
+      transform: scale(1.05); 
+      box-shadow: 0px 20px 20px -12px #00000026; 
+    }
+
+    .ribbon {
+
+      position: absolute;
+      right: 0;
+      top: 20px;
+      
+    }
+
+    .photo {
+
+      height: 65%;
+      background-color: #483535;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .content {
+
+      flex-direction: column;
+      padding: 14px;
+
+      .name {
+
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 8px;
+
+      }
+
+      .tags {
+
+        font-size: 18px;
+        font-weight: 300;
+
+      }
+
+    }
+
+  }
+
+}
