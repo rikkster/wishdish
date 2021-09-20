@@ -1,0 +1,87 @@
+.caption {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+
+  &__item{
+
+    display: flex;
+    align-items: center;
+
+    .add-img{
+
+      width: 39px;
+      height: 39px;
+      cursor: pointer;
+      background-image: url(../../images/icons/add.svg);
+      background-size: 77%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+
+    text{
+
+      font-weight: 500;
+      font-size: 33px;
+      color: #414141;
+      padding-right: 15px;
+
+    }
+
+    .searchbox{
+
+      display: flex;
+      margin-right: 2px;
+      border-radius: 21px;
+      border: 1px solid #DCDCDC;
+      background: #FAFAFA;
+      height: 39px;
+      max-width: 320px;
+      width: 100%;
+      padding-left: 2%;
+
+      .icon {
+
+        width: 40px;
+        height: 37px;
+        background-image: url(../../images/icons/search.svg);
+        background-size: 49%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+      }
+
+      input[ type="text" ]{
+
+        color: #AAAAAA;
+        font-size: 14px;
+        font-weight: 500;
+        outline: none;
+        border: unset;
+        background: unset;
+
+      }
+
+    }
+
+    .view-mode{ 
+      
+      display: grid;
+      place-content: center;
+      width: 53px;
+      height: 39px;    
+      border-radius: 5px;
+      margin-left: 15px;
+      background: #F2F2F2;
+      cursor: pointer;
+
+      &.active svg path { fill: #8590F5; }
+
+    }
+
+  }
+
+}
