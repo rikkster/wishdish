@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import useGlobal from '../../store';
 
 const SidebarMenu = () => {
+  
+  const [ globalState, globalActions ] = useGlobal();
+  const { popup } = globalState;
 
   const location = useLocation();
 
@@ -23,7 +27,7 @@ const SidebarMenu = () => {
   
   return (
 
-    <nav className="sidebar">
+    <nav className = {`sidebar${ popup.show ? ' blur' : ''}`}>
 
       { MENU.map(( el, k ) => (
 
