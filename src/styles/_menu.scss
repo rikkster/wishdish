@@ -1,7 +1,8 @@
 .sidebar{
 
   background: #F4F4F4;
-  width: 24%;
+  // width: 24%;
+  min-width: 300px;
   padding: 20px;
   user-select: none;
 
@@ -44,14 +45,13 @@
       margin-right: 14px;
 
       background-size: contain;
-      background-repeat: no-repeat;
       background-position: top;
 
       &-dishes { background-image: url(../../images/icons/menu/dishes.svg); }
       &-restaurants { background-image: url(../../images/icons/menu/restaurants.svg); }
       &-checkins { background-image: url(../../images/icons/menu/checkins.svg); }
       &-users { background-image: url(../../images/icons/menu/users.svg); }
-      &-all { background-image: url(../../images/icons/menu/all.svg); }
+      &-feed { background-image: url(../../images/icons/menu/feed.svg); }
 
     }
 
