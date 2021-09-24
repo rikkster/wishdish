@@ -10,9 +10,9 @@ const Header = () => {
 
     <header className = { popup.show ? ' blur' : ''}>
 
-      <div class="left">
+      <div className = "left">
 
-        <div class="logo"></div>
+        <div className = "logo"></div>
 
         <text>
 
@@ -22,13 +22,13 @@ const Header = () => {
 
       </div>
 
-      <div class="right">
+      <div className = "right">
 
         Андрей
 
-        <div class="user-img" style={{ backgroundImage: "url(https://sun9-27.userapi.com/impf/c844216/v844216867/1cd42d/v9C8YVfDfkU.jpg?size=1113x664&quality=96&sign=80d0889a45370ad246e10912256df74f&type=album)"}} /> {/* style="background-image: url('./img/useravatar.png');" */}
+        <div className = "user-img" style={{ backgroundImage: "url(https://sun9-27.userapi.com/impf/c844216/v844216867/1cd42d/v9C8YVfDfkU.jpg?size=1113x664&quality=96&sign=80d0889a45370ad246e10912256df74f&type=album)"}} /> {/* style="background-image: url('./img/useravatar.png');" */}
 
-        <div class="union" />
+        <div className = "triangle-arrow" />
 
       </div>
 
