@@ -21,7 +21,7 @@ const SidebarMenu = () => {
     { text: "Рестораны", url:"/restaurants" },
     { text: "Check-ins", url:"/checkins" },
     { text: "Пользователи", url:"/users" },
-    { text: "Лента редактора", url:"/all" }
+    { text: "Лента редактора", url:"/feed" }
 
   ]
   
