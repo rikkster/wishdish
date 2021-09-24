@@ -1,4 +1,8 @@
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 html,
 body {
@@ -14,18 +18,24 @@ body {
 
 }
 
+// @import "_mixins.scss";
 @import "_header.scss";
 @import "_menu.scss";
 @import "_table.scss";
 @import "_grid.scss";
 @import "_content.head.scss";
+@import "_inputs.scss";
 @import "_popups.scss";
 @import "_animation.scss";
+@import "_misc.scss";
 // @import "_content.scss";
 
 #app, .content {
+  
+  position: relative;
   display: flex;
   flex-grow: 1;
+
 }
 
 #app { flex-direction: column; }
@@ -47,19 +57,25 @@ body {
 
 }
 
-scrollbar {
+.scrollbar {
+
   flex: 1 1 auto;
-  overflow-y: auto;
+  overflow-y: scroll;
   width: calc(100% + 24px);
   margin-left: -24px;
-  height: 0px;
+  min-height: 0px;
+
 }
 
 .workflow {
 
+  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex-grow: 1;
+  width: calc(100% - 300px);
+  left: 300px;
+  height: 100%;
   padding: 38px 58px 10px 62px;
   background: #fff;
 
@@ -87,4 +103,8 @@ scrollbar {
   width: 6px;
 }
 
-.blur { filter: blur(1.5px); }
+@media screen and ( max-width: 1250px ) {
+
+  .sidebar, .workflow { zoom: 0.8; }
+  
+}
