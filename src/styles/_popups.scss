@@ -1,4 +1,5 @@
 .popup-background{
+
   position: fixed;
   width: 100%;
   height: 100%;
@@ -6,9 +7,11 @@
   left: 0px;
   background: rgba(10, 8, 2, 0.25);
   z-index: 20;
+
 }
 
 .popup-container{
+
   z-index: 20;
   display: flex;
   position: fixed;
@@ -17,69 +20,170 @@
   width: 100%;
   border-top: none;
   height: 100%;
-  max-height: calc(100% - 1.55em);
+  // max-height: calc(100% - 1.55em);
   overflow-x: hidden;
   overflow-y: auto;
-  padding-top: 0.7em;
-  padding-bottom: 8.5em;
   justify-content: center;
   align-items: center;
 
   .popup {
+
     animation-name: zoomIn;
     animation-duration: 0.65s;
     animation-iteration-count: 1;
     position: relative;
     max-width: 100%;
     margin: auto .55em;
-    padding: 0.7em 4em;
     overflow: hidden;
     background-color: #FFFFFF;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     user-select: none;
 
-      .popup__close {
-        z-index: 21;
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 1.2em;
-        height: 1em;
-        font-size: 2.5em;
-        line-height: 0;
-        color: #d9d9d9;
-        cursor: pointer;
-      }
-
-      .popup__title {
-        position: relative;
-        top: 0.5em;
-        margin-bottom: 1.3em;
-        left: 0;
-        width: 100%;
-        font-size: 23px;
-        text-align: center;
-        color: #707070;
-        font-weight: 600;
-      }        
+    #popupClose { display: none; }
 
   }
 
-  .popup + .btn { padding-bottom: unset; }
-
   .popup.zoomOut {
+
     animation-name: zoomOut;
     animation-duration: 0.65s;
     animation-iteration-count: 1;
+
   }
 }
 
 .popup-container ~ .main-container,
 .popup-container ~ .navbar{
+
   filter: blur(2.5px);
   transition: 0.05s;
+
+}
+
+.details {
+
+  display: flex;
+  min-width: 470px;
+  min-height: 140px;
+
+  &__photo {
+
+    background-position: center;
+    background-size: cover;
+    background-color: lightgray;
+
+  }
+  
+  &.dishes      .details__photo { width: 388px; }
+  &.users       .details__photo { width: 243px; }
+  &.restaurants .details__photo { width: 42vw; }
+  &.checkins    .details__photo,
+  &.feed        .details__photo { width: 40vw; }
+
+  &__content { 
+    
+    flex-grow: 1;
+    min-width: 464px;
+    padding: 14px 26px;
+
+  }
+
+  .head {
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+
+    .title {
+
+      position: relative;
+      font-size: 18px;
+      font-weight: 500;
+      color: #414141;
+
+      .btn-remove {
+
+        position: absolute;
+        top: 24px;
+        left: 0; right: 0;
+        margin: auto;
+
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        color: #C77373;
+        cursor: pointer;
+
+        transition: 0.2s;
+
+        &:hover {     
+          font-weight: 400;
+          transform: scale(1.2); 
+        }
+
+      }
+
+    }
+
+  }
+
+  .btn {
+
+    $shift: 12px;
+
+    position: relative;
+    width: 27px;
+    height: 27px;
+    
+    cursor: pointer;
+    transition: 0.3s;
+    background-size: contain !important;
+
+    &:hover { transform: scale(1.25); }
+
+    &-confirm {
+      right: -$shift;
+      background: url(../../images/icons/btn-confirm.svg); 
+    }
+
+    &-close   {
+      left: -$shift;
+      background: url(../../images/icons/btn-close.svg); 
+    }
+
+  }
+
+  .details_user_info {
+
+    display: flex;
+
+    .input-titled {
+
+      &.mediafield { width: 115px; }
+
+      &.checkins {
+
+        width: unset;
+
+        .title { padding-left: 7px; }
+        
+        .counter {
+
+          font-size: 91px;
+          font-weight: 500;
+          line-height: 78px;
+          text-align: center;
+          color: #eaeaea;
+
+        }
+      
+      }
+
+    }
+
+  }
+
 }
