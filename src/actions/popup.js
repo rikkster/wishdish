@@ -29,6 +29,26 @@ export const hidePopups = async (store) => {
         show: false,
         name: '',
       },
+      details: {
+    
+        id: 0,
+        name: "",
+        tags: "",
+        checkins: "",
+        workingtime: "",
+        phone: "",
+        email: "",
+        address: "",
+        online_brone: "",
+        user_name: "",
+        dish_name: "",
+        restaurant_name: "",
+        rating: "",
+        comment: "",
+        media: []
+
+      }, 
+      detailsSelectedPhoto: ""
 
     });
 
