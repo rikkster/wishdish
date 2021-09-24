@@ -2,27 +2,30 @@
   
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  min-height: 0;
 
   .rows {
 
     flex: 1 1 auto;
     overflow-y: auto;
-    height: 0px;
+    min-height: 0px;
 
   }
   
   .row { 
             
     display: grid;
-    grid-template-columns: 49px 51px 1fr 130px 107px 180px 1fr;
-
     font-size: 15px;
     color: #454545;
     margin-bottom: 2px;
     padding: 8px;
     border-radius: 8px;
     transition: 0.8s;
+    cursor: pointer;
+
+    div { position: relative; }
+
+    div:not(div:nth-child(3)) { user-select: none; }
 
     &:nth-child(2n) { background: #FAFAFA; }
 
@@ -48,8 +51,6 @@
         height: 15px;
         cursor: pointer;
         background-image: url(../../images/icons/sort-arrows.svg);
-        background-position: center;
-        background-repeat: no-repeat;
         background-size: contain;
         
       }
@@ -64,52 +65,72 @@
 
       min-width: 34px;
       min-height: 34px;
+      width: 34px;
+      height: 34px;
       border-radius: 4px;
+      background-size: cover;
+      background-position: center;
+      transition: 0.35s;
 
     }
 
-    div:not(.photo):not(.icon) { 
+    div:not(.photo):not(.icon):not(.stars):not(.star)  { 
             
       display: flex;
       align-items: center;
       padding-right: 24px;
-
-      &:nth-child(4),
-      &:nth-child(5),
-      &:nth-child(6) { justify-content: right; }
       
     }
 
   }
 
-  &.table-dishes {
+  &.dishes .row { 
 
-    .row { 
+    grid-template-columns: 49px 51px 1fr 130px 107px 180px 1fr; 
+    
+    div:not(.photo):not(.icon) { 
 
-      grid-template-columns: 49px 51px 1fr 130px 107px 180px 1fr; 
-
-      div:not(.photo):not(.icon) { 
-
-        &:nth-child(4), &:nth-child(5), &:nth-child(6) { 
-          justify-content: right; 
-        }
-
+      &:nth-child(4), &:nth-child(5), &:nth-child(6) { 
+        justify-content: right; 
       }
 
     }
 
   }
 
-  &.table-restaurants {
-    
+  &.restaurants .row { 
+
+    grid-template-columns: 49px 51px 1fr 130px 1.7fr; 
+
+    div:not(.photo):not(.icon) { &:nth-child(4) { justify-content: right; } }
+
   }
 
-  &.table-checkins {
+  &.checkins .row { 
+
+    grid-template-columns: 49px 51px 143px 1fr 1.1fr 153px 150px; 
     
+    div:not(.photo):not(.icon) { 
+
+      &:nth-child(7) { 
+        justify-content: right; 
+      }
+
+    }
+
   }
 
-  &.table-users {
-    
+  &.users .row { 
+
+    grid-template-columns: 49px 51px 1fr 130px 140px 1fr; 
+
+    div:not(.photo):not(.icon) { 
+
+      &:nth-child(4), 
+      &:nth-child(5) { justify-content: right; } 
+
+    }
+
   }
 
 }
