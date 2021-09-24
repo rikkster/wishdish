@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 26px;
-
+  
   &__item{
 
     display: flex;
@@ -12,13 +12,70 @@
 
     .add-img{
 
+      position: relative;
       width: 39px;
       height: 39px;
       cursor: pointer;
       background-image: url(../../images/icons/add.svg);
       background-size: 77%;
-      background-position: center;
-      background-repeat: no-repeat;
+
+      .add {
+
+        opacity: 0;
+        transition: 0.2s;
+        position: absolute;
+        height: 61px;
+        width: 120px;
+        top: 0;
+        left: -42px;
+        right: 0;
+        margin: auto;
+        font-size: 12px;
+
+        &-variant {
+
+          position: absolute;
+          bottom: 0;
+          width: 50%;
+          cursor: pointer;
+
+          &::before {
+
+            content: "";
+            position: absolute;
+            display: block;
+            top: -16px;
+            width: 16px;
+            height: 16px;
+            background-image: url(../../images/mini-arrow.svg);
+            background-repeat: no-repeat;
+
+          }
+
+          &-restaurant {
+
+            left: 0;
+            &::before { right: 10px; }
+
+          }
+
+          &-checkin {
+
+            right: 0;
+            text-align: right;
+
+            &::before {
+
+              left: 14px;
+              transform: rotateY(180deg);
+
+            }
+          
+          }
+
+        }
+          
+      }
 
     }
 
@@ -49,8 +106,6 @@
         height: 37px;
         background-image: url(../../images/icons/search.svg);
         background-size: 49%;
-        background-position: center;
-        background-repeat: no-repeat;
 
       }
 
@@ -71,8 +126,8 @@
       
       display: grid;
       place-content: center;
-      width: 53px;
-      height: 39px;    
+      min-width: 38px;
+      height: 39px;
       border-radius: 5px;
       margin-left: 15px;
       background: #F2F2F2;
@@ -80,6 +135,92 @@
 
       &.active svg path { fill: #8590F5; }
 
+    }
+
+  }
+
+  &.feed .caption__item .add-img:hover .add { opacity: 1; }
+
+  .sortbar {
+
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    user-select: none;
+
+    &.az .item.az,
+    &.date .item.date,
+    &.checkins .item.checkins {
+
+      color: #fec200;
+      .sort-arrow { width: 9px; }
+      &:hover .cancel { opacity: 1; }
+
+    }
+    
+    &.desc .item.az,
+    &.desc .item.date,
+    &.desc .item.checkins {
+
+      .sort-arrow { transform: rotate(180deg); }
+      
+    }
+
+    .item {
+
+      position: relative;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      margin-left: 50px;
+      font-weight: 500;
+      color: #9e9e9e;
+      cursor: pointer;
+
+      &.tags { 
+        min-width: 60px;
+      }
+
+      .cancel {
+
+        position: relative;
+        opacity: 0;
+        width: 15px;
+        height: 15px;
+        left: -5px;
+        top: 0.5px;
+        transition: 0.3s;
+        background-image: url(../../images/icons/close-small.svg);
+
+      }
+
+      .sort-arrow {
+
+        position: relative;
+        width: 0px;
+        height: 16px;
+        top: -1px;
+        margin-left: 4px;
+        transition: 0.3s;
+        transform: rotate(0deg);
+        background-image: url(../../images/sort-arrow.svg);
+
+      }
+
+      &.az .sort-arrow { top: -0.5px; }
+
+      .triangle-arrow {
+
+        background-size: 75%;
+        background-position: right;
+        margin-left: 0px;
+
+      }
+
+    }
+
+    .cloud-message {
+      left: 37px;
     }
 
   }
