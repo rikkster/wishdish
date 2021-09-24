@@ -30,8 +30,6 @@ header {
       background-image: url(../../images/wishdish-logo.svg);
       height: 50px;
       width: 50px;
-      background-position: center;
-      background-repeat: no-repeat;
       background-size: contain;
   
     }
@@ -51,22 +49,19 @@ header {
       min-width: 43px;
       height: 43px;
       border-radius: 100px;
-      background-repeat: no-repeat;
-      background-position: center;
       background-size: cover;
-
-    }
-
-    .union{
-
-      min-width: 14px;
-      height: 14px;
-      background-image: url(../../images/icons/triangle-small.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
 
     }
     
   }
+
+}
+
+.triangle-arrow {
+
+  min-width: 14px;
+  height: 14px;
+  background-image: url(../../images/icons/triangle-small.svg);
+  background-size: contain;
 
 }
