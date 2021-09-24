@@ -6,9 +6,11 @@ import Header from '../components/header';
 import SidebarMenu from '../components/menu';
 import { PopupController } from '../components/popups/popup.controller';
 
-const Dishes = lazy(() => import('../pages/dishes'));
-const Restaurants = lazy(() => import('../pages/restaurants'));
-const Checkins = lazy(() => import('../pages/checkins'));
+const Restaurants = lazy(() => import('./restaurants'));
+const EditorFeed = lazy(() => import('./editor.feed'));
+const Checkins = lazy(() => import('./checkins'));
+const Dishes = lazy(() => import('./dishes'));
+const Users = lazy(() => import('./users'));
 
 const Panel = () => {
 
@@ -22,23 +24,21 @@ const Panel = () => {
 
       <section className = "content">
 
-        <SidebarMenu />
+      <SidebarMenu />
+      
+        <Suspense fallback={ <Loader /> }>
 
-        <section className = "workflow">
-        
-          <Suspense fallback={ <Loader /> }>
+          <Switch>
 
-            <Switch>
+            <Route exact path='/dishes' component = { Dishes } />
+            <Route exact path='/restaurants' component = { Restaurants } />                
+            <Route exact path='/checkins' component = { Checkins } />                
+            <Route exact path='/users' component = { Users } />                
+            <Route exact path='/feed' component = { EditorFeed } />                
 
-              <Route exact path='/dishes' component = { Dishes } />
-              <Route exact path='/restaurants' component = { Restaurants } />                
-              <Route exact path='/checkins' component = { Checkins } />                
+          </Switch>
 
-            </Switch>
-
-          </Suspense>
-
-        </section>
+        </Suspense>
 
       </section>
 
