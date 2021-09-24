@@ -10,8 +10,6 @@ const App = () => (
     <Switch>
 
       <Route path='/' component = { Panel } />
-      <Route path='/dishes' component = { Panel } />
-      <Route path='/restaurants' component = { Panel } />
       {/* TODO: auth */}
       
 
